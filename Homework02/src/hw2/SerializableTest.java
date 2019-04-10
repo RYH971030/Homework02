@@ -14,12 +14,11 @@ public class SerializableTest {
 
 	public static void main(String[] args) throws IOException, ClassNotFoundException{
 		
-		Student1 s1 = new Student1();
-		System.out.println("序列化之前：" + s1);
+		Student1 forS1 = new Student1();
 		
-		SerializableTest.WriteObject(FILE, s1);
-		SerializableTest.ReadObject(FILE);
-		System.out.println("序列化之前：" + s1);
+		SerializableTest.WriteObject(FILE, forS1);
+		Student1 bakS1 = SerializableTest.ReadObject(FILE);
+		System.out.println("反序列化之后：\n" + bakS1.ToString());
 		
 		
 	}
@@ -28,27 +27,30 @@ public class SerializableTest {
 	/*
 	 * 对象序列化
 	 */
-	public static void WriteObject(String fName,Serializable s) throws IOException {
+	private static void WriteObject(String fName,Serializable s) throws IOException {
 		
 		File f = new File(fName);
 		FileOutputStream fos = new FileOutputStream(f);
 		ObjectOutputStream oos = new ObjectOutputStream(fos);
 		oos.writeObject(s);
-		
+		System.out.println("Student对象序列化成功！");
 		oos.close();
 	}
 	
 	/*
 	 * 对象反序列化
 	 */
-	public static void ReadObject(String fName) throws IOException, ClassNotFoundException {
+	private static Student1 ReadObject(String fName) throws IOException, ClassNotFoundException {
+		
+		Student1 s1 = new Student1();
 		
 		File f = new File(fName);
 		FileInputStream fis = new FileInputStream(f);
 		ObjectInputStream ois = new ObjectInputStream(fis);
 		ois.readObject();
-		
-		ois.close();		
+		System.out.println("Student对象反序列化成功！");
+		ois.close();
+		return s1;
 	}
 	
 }

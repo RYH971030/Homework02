@@ -31,4 +31,7 @@ public class Student1 implements Serializable{
 		return this.addresses;
 	}
 	
+	public String ToString() {
+		return "姓名" + name + "  分数" + score + "  地址" + addresses[0] ;
+	}
 }
