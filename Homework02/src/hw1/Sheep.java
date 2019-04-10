@@ -20,10 +20,6 @@ public class Sheep implements Animal{
 		// TODO Auto-generated method stub
 		return weight;
 	}
-//	public void setWeight(int x) {
-//		// TODO Auto-generated method stub
-//		weight=x;
-//		
-//	}
+
 
 }

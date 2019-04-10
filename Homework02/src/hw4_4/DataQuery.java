@@ -18,12 +18,12 @@ public class DataQuery {
 		
 		//没用索引的情况约为2600ms,建立索引之后约为260ms
 		
-		String sql="select * from students where name = '刘建国20000'";
+		String sql = "select * from students where name = '刘建国20000'";
 		
 		try{
 			
 			Long begin = new Date().getTime();
-			ResultSet rs=DBConn.getStatement().executeQuery(sql);//得到的是结果的集合
+			ResultSet rs = DBConn.getStatement().executeQuery(sql);//得到的是结果的集合
             Long end = new Date().getTime();
             System.out.println("cast:" + (end-begin) + "ms");
             

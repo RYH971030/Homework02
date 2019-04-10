@@ -20,11 +20,5 @@ public class Pig implements Animal{
 		// TODO Auto-generated method stub
 		return weight;
 	}
-//	@Override
-//	public void setWeight(int x) {
-//		// TODO Auto-generated method stub
-//		weight=x;
-//		
-//	}
 
 }
