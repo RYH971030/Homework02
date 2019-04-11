@@ -7,11 +7,15 @@ import java.io.Serializable;
  */
 public class Student1 implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String name;
 	private double score;
 	private String[] addresses;
 	
-	Student1(){
+	public Student1(){
 		this.name = " 尼古拉斯";
 		this.score = 99.5;
 		this.addresses = new String [2];
